@@ -2,6 +2,7 @@ package dataStructures;
 
 public class BinarySearchTree<K extends Comparable<K>,V> extends BinaryTree<Entry<K,V>> implements SortedMap<K,V>{
 	
+	
 	protected BinarySearchTree(Node<Entry<K,V>> n) {
 		root=n;
 	}
@@ -61,8 +62,32 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends BinaryTree<Entr
 	}
 	@Override
 	public V insert(K key, V value) {
-		// TODO 
-		return null;
+		BTNode<Entry<K,V>> node = new BTNode<>(new EntryClass<K,V>(key,value));
+		return insertNode(node,(BTNode<Entry<K, V>>)root);
+	}
+	private V insertNode(BTNode<Entry<K, V>> node, BTNode<Entry<K, V>> current) {
+		int a = current.getElement().getKey().compareTo(node.getElement().getKey());
+		
+		if(a == 0 ) {
+			current.setElement(node.getElement());
+			return current.getElement().getValue();
+		}
+		else if(a < 0) {
+			if(left(current) == null) {
+				current.setLeft(node);
+				node.setParent(current);
+				return null;
+			}
+			return insertNode(node,(BTNode<Entry<K, V>>) left(current));
+		}
+		else {
+			if(right(current) == null) {
+				current.setRight(node);
+				node.setParent(current);
+				return null;
+			}
+			return insertNode(node,(BTNode<Entry<K, V>>)right(current));
+		}
 	}
 	@Override
 	public V remove(K key) {

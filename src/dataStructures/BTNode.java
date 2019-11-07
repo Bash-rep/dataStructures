@@ -5,6 +5,19 @@ class BTNode<E> implements Node<E>{
 	protected BTNode<E> parent;
 	protected BTNode<E> left;
 	protected BTNode<E> right;
+	public void setParent(BTNode<E> parent) {
+		this.parent = parent;
+	}
+	public void setLeft(BTNode<E> left) {
+		this.left = left;
+	}
+	public void setRight(BTNode<E> right) {
+		this.right = right;
+	}
+	public void setElement(E element) {
+		this.element = element;
+	}
+
 	protected E element;
 
 	
@@ -21,7 +34,7 @@ class BTNode<E> implements Node<E>{
 	public E getElement() {
 		return element;
 	}
-	//...
+
 	public Node<E> getLeft() {
 		return left;
 	}
@@ -29,8 +42,9 @@ class BTNode<E> implements Node<E>{
 	public Node<E> getRight() {
 		return right;
 	}
-	@Override
+
 	public Node<E> getParent() {
 		return parent;
 	}
+	
 }

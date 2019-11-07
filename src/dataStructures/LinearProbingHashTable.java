@@ -40,7 +40,7 @@ public class LinearProbingHashTable<K, V> extends MapWithHashTable<K, V> {
 	}
 //TODO
 	@Override
-	public V finmd(K key) {
+	public V find(K key) {
 		int i = hash((String) key);
 		boolean found = false;
 		while (!found) {
@@ -52,6 +52,7 @@ public class LinearProbingHashTable<K, V> extends MapWithHashTable<K, V> {
 				i = i++ % maxSize;
 			}
 		}
+		return null;
 	}
 
 	@Override

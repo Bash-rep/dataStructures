@@ -10,6 +10,18 @@ public class SinglyLinkedList<E> implements List<E> {
 	// Number of elements in the list.
 	protected int currentSize;
 
+	public SinglyLinkedList(int i) {
+		head = null;
+		tail = null;
+		currentSize = 0;
+	}
+	
+	public SinglyLinkedList() {
+		head = null;
+		tail = null;
+		currentSize = 0;
+	}
+
 	@Override
 	public boolean isEmpty() {
 		return currentSize == 0;
