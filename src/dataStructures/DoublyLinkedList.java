@@ -1,5 +1,14 @@
 package dataStructures;
 
+/**
+ * Propriedade intelectual de Diogo Almeida.
+ * 
+ * Testado com mais de 10,000 elementos
+ * 
+ * @author Diogo Almeida
+ *
+ * @param <E>
+ */
 
 public class DoublyLinkedList<E> implements TwoWayList<E> {
 	// Node at the head of the list.
