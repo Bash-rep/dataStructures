@@ -1,5 +1,7 @@
 package dataStructures;
 
+import dataStructures.BST.BSTNode;
+
 public class BinarySearchTree<K extends Comparable<K>, V> extends BinaryTree<Entry<K, V>> implements SortedMap<K, V> {
 
 	protected BinarySearchTree(Node<Entry<K, V>> n) {
@@ -25,9 +27,10 @@ public class BinarySearchTree<K extends Comparable<K>, V> extends BinaryTree<Ent
 		return ((BTNode<Entry<K, V>>) n).getParent();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Iterator<Entry<K, V>> iterator() {
-		return new BSTOrderIterator<K, V>(root);
+		return new BSTOrderIterator<K, V>((BSTNode<Entry<K, V>>) root);
 	}
 
 	@Override

@@ -1,5 +1,7 @@
 package dataStructures;
 
+import dataStructures.BST.BSTNode;
+
 public class BSTOrderIterator<K,V> implements Iterator<Entry<K,V>> {
 	/**
 	 * Notas:
@@ -12,7 +14,7 @@ public class BSTOrderIterator<K,V> implements Iterator<Entry<K,V>> {
 	
 	
 	
-	public BSTOrderIterator(Node<Entry<K,V>> root) {
+	public BSTOrderIterator(BSTNode<Entry<K, V>> root) {
 		// TODO Auto-generated constructor stub
 	}
 
